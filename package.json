@@ -1,0 +1,57 @@
+{
+  "name": "auto-approve",
+  "displayName": "Auto Approve",
+  "description": "Auto-approve all IDE permission prompts (Allow, Run, Retry) for AI Agents. Supports VS Code, Antigravity, Cursor.",
+  "version": "2.0.0",
+  "license": "MIT",
+  "publisher": "tempPublisher",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jiangtaoniu/Antigravity-Auto-Run.git"
+  },
+  "keywords": [
+    "auto approve",
+    "auto accept",
+    "auto allow",
+    "antigravity",
+    "gemini",
+    "permission",
+    "auto click",
+    "agent"
+  ],
+  "engines": {
+    "vscode": "^1.80.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [
+    "*"
+  ],
+  "main": "./out/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "auto-approve.start",
+        "title": "Auto Approve: Start"
+      },
+      {
+        "command": "auto-approve.stop",
+        "title": "Auto Approve: Stop"
+      }
+    ]
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "pretest": "npm run compile && npm run lint",
+    "lint": "eslint src --ext ts",
+    "package": "vsce package"
+  },
+  "devDependencies": {
+    "@types/node": "^18.0.0",
+    "@types/vscode": "^1.80.0",
+    "typescript": "^5.1.0"
+  }
+}

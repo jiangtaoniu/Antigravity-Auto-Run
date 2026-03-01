@@ -1,7 +1,7 @@
 {
-  "name": "auto-approve",
-  "displayName": "Auto Approve",
-  "description": "Auto-approve all IDE permission prompts (Allow, Run, Retry) for AI Agents. Supports VS Code, Antigravity, Cursor.",
+  "name": "antigravity-auto-run",
+  "displayName": "Antigravity Auto Run",
+  "description": "Auto-run and auto-approve all permission prompts in Antigravity / VS Code / Cursor IDE for AI Agents.",
   "version": "2.0.0",
   "license": "MIT",
   "publisher": "tempPublisher",
@@ -32,12 +32,12 @@
   "contributes": {
     "commands": [
       {
-        "command": "auto-approve.start",
-        "title": "Auto Approve: Start"
+        "command": "antigravity-auto-run.start",
+        "title": "Antigravity Auto Run: Start"
       },
       {
-        "command": "auto-approve.stop",
-        "title": "Auto Approve: Stop"
+        "command": "antigravity-auto-run.stop",
+        "title": "Antigravity Auto Run: Stop"
       }
     ]
   },

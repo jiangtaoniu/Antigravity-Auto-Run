@@ -7,17 +7,17 @@ let notificationPoller: NodeJS.Timeout | undefined;
 let outputChannel: vscode.OutputChannel;
 
 export function activate(context: vscode.ExtensionContext) {
-    outputChannel = vscode.window.createOutputChannel('Auto Approve');
-    outputChannel.appendLine('Auto Approve is now active.');
+    outputChannel = vscode.window.createOutputChannel('Antigravity Auto Run');
+    outputChannel.appendLine('Antigravity Auto Run is now active.');
 
-    const startCommand = vscode.commands.registerCommand('auto-approve.start', () => {
+    const startCommand = vscode.commands.registerCommand('antigravity-auto-run.start', () => {
         startClicker(context);
-        vscode.window.showInformationMessage('Auto Approve: Started.');
+        vscode.window.showInformationMessage('Antigravity Auto Run: Started.');
     });
 
-    const stopCommand = vscode.commands.registerCommand('auto-approve.stop', () => {
+    const stopCommand = vscode.commands.registerCommand('antigravity-auto-run.stop', () => {
         stopClicker();
-        vscode.window.showInformationMessage('Auto Approve: Stopped.');
+        vscode.window.showInformationMessage('Antigravity Auto Run: Stopped.');
     });
 
     context.subscriptions.push(startCommand, stopCommand);

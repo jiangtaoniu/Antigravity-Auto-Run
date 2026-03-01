@@ -1,4 +1,4 @@
-# Auto Approve
+# Antigravity Auto Run
 
 **智能 IDE 权限自动审批代理** — 适用于 VS Code / Antigravity / Cursor
 
@@ -97,7 +97,7 @@ dismiss, discard, revert, rollback, undo, skip, ignore
 
 **方式一：从 Marketplace 安装**（推荐）
 
-在 IDE 扩展搜索 `Auto Approve` 直接安装。
+在 IDE 扩展搜索 `Antigravity Auto Run` 直接安装。
 
 **方式二：从 VSIX 安装**
 
@@ -109,8 +109,8 @@ dismiss, discard, revert, rollback, undo, skip, ignore
 
 扩展启动后**零配置自动运行**。如需手动控制：
 
-- `Ctrl+Shift+P` → `Auto Approve: Start`
-- `Ctrl+Shift+P` → `Auto Approve: Stop`
+- `Ctrl+Shift+P` → `Antigravity Auto Run: Start`
+- `Ctrl+Shift+P` → `Antigravity Auto Run: Stop`
 
 > ⚠️ 请勿将 IDE 最小化到任务栏（Chromium 会挂起无障碍树）。正确的挂机方式：让 IDE 窗口平铺在桌面，用浏览器/游戏全屏覆盖即可。
 

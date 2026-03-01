@@ -1,6 +1,6 @@
-# Auto Approve Agent
+# Antigravity Auto Run
 
-**Smart IDE Permission Auto-Approval Agent** — for VS Code / Antigravity / Cursor
+**Smart IDE Permission Auto-Approval Agent** — for Antigravity / VS Code / Cursor
 
 **[🌐 中文文档](./README.md)**
 
@@ -96,7 +96,7 @@ After passing the blacklist, buttons matching any of these patterns are auto-cli
 
 **Option 1: From Marketplace** (Recommended)
 
-Search `Auto Approve Agent` in the IDE Extensions panel and install directly.
+Search `Antigravity Auto Run` in the IDE Extensions panel and install directly.
 
 **Option 2: From VSIX**
 
@@ -108,8 +108,8 @@ Search `Auto Approve Agent` in the IDE Extensions panel and install directly.
 
 The extension runs **automatically with zero configuration**. For manual control:
 
-- `Ctrl+Shift+P` → `Auto Approve Agent: Start`
-- `Ctrl+Shift+P` → `Auto Approve Agent: Stop`
+- `Ctrl+Shift+P` → `Antigravity Auto Run: Start`
+- `Ctrl+Shift+P` → `Antigravity Auto Run: Stop`
 
 > ⚠️ Do not minimize the IDE to the taskbar (Chromium suspends the accessibility tree). Instead, leave the IDE window open on desktop and cover it with your browser/game in full screen.
 

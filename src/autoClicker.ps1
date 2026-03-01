@@ -147,6 +147,8 @@ $global:clickedIds = New-Object System.Collections.Generic.HashSet[string]
 
 # Warmup flag: first scan pass only caches existing buttons without clicking them
 $global:isWarmupDone = $false
+# Track warmup-cached IDs so we can un-cache the most recent ones after warmup
+$global:warmupIdList = New-Object System.Collections.Generic.List[string]
 
 # Track the last window the user was actively using outside the IDE
 $global:lastNonIdeWindow = [IntPtr]::Zero
@@ -296,6 +298,7 @@ while ($true) {
                     if (-not $global:isWarmupDone) {
                         if ($null -ne $runtimeIdArray) {
                             $null = $global:clickedIds.Add($runtimeId)
+                            $global:warmupIdList.Add($runtimeId)
                         }
                         # Skip all clicking / scrolling / focus-stealing for historical buttons
                         continue
@@ -428,8 +431,14 @@ while ($true) {
     # From next cycle onward, any NEW button that appears will be clicked immediately.
     if (-not $global:isWarmupDone) {
         $warmupCount = $global:clickedIds.Count
+        # Keep the last 3 buttons UN-cached — they are the most recent active prompt(s)
+        # UI tree order is top-to-bottom, so the last items are the newest buttons
+        $keepCount = [Math]::Min(3, $global:warmupIdList.Count)
+        for ($i = $global:warmupIdList.Count - $keepCount; $i -lt $global:warmupIdList.Count; $i++) {
+            $null = $global:clickedIds.Remove($global:warmupIdList[$i])
+        }
         if ($warmupCount -gt 0) {
-            Write-Host "[Warmup] Cached $warmupCount historical buttons. Future new buttons will be clicked."
+            Write-Host "[Warmup] Cached $($global:clickedIds.Count) historical buttons, kept $keepCount recent buttons for immediate processing."
         }
         $global:isWarmupDone = $true
     }
